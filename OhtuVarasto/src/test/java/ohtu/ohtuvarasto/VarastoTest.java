@@ -64,8 +64,10 @@ public class VarastoTest {
     
     @Test
     public void annetaanMitäVoidaanNollaa() {
+        varasto.lisaaVarastoon(5);
         double otto = 678936.2;
-        assertEquals(5.0, varasto.getSaldo(), vertailuTarkkuus);
+        varasto.otaVarastosta(otto);
+        assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
