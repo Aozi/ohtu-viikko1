@@ -72,7 +72,7 @@ public class VarastoTest {
     public void negLisaaminenEiLisaa () {
         double nykyinen = varasto.getSaldo();
         varasto.lisaaVarastoon(-1.3);
-        assertEquals(nykyinen, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(nykyinen, 0, vertailuTarkkuus);
     }
     
     @Test
