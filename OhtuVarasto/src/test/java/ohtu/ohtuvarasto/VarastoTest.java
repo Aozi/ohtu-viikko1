@@ -65,14 +65,14 @@ public class VarastoTest {
     @Test
     public void annetaanMitäVoidaanNollaa() {
         double otto = 678936.2;
-        assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(5.0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
     public void negLisaaminenEiLisaa () {
         double nykyinen = varasto.getSaldo();
         varasto.lisaaVarastoon(-1.3);
-        assertEquals(nykyinen, 0, vertailuTarkkuus);
+        assertEquals(nykyinen, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
