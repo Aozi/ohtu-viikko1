@@ -56,6 +56,39 @@ public class VarastoTest {
     }
 
     @Test
+    public void annetaanMitäVoidaanAntaaOikein() {
+        double otto = 678936.2;
+        double nykSaldo = varasto.getSaldo();
+        assertEquals(nykSaldo, varasto.otaVarastosta(otto), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void annetaanMitäVoidaanNollaa() {
+        double otto = 678936.2;
+        assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void negLisaaminenEiLisaa () {
+        double nykyinen = varasto.getSaldo();
+        varasto.lisaaVarastoon(-1.3);
+        assertEquals(nykyinen, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void lisaysLiikaaTäyttää () {
+        double lisays = varasto.getTilavuus() + 3;
+        varasto.lisaaVarastoon(lisays);
+        assertEquals(varasto.getSaldo(), varasto.getTilavuus(), vertailuTarkkuus);
+        
+    }
+    
+    @Test
+    public void negOttaminenEiPalauta() {
+         
+         assertEquals(0.0, varasto.otaVarastosta(-1), vertailuTarkkuus);
+    }
+    @Test
     public void ottaminenLisääTilaa() {
         varasto.lisaaVarastoon(8);
 
