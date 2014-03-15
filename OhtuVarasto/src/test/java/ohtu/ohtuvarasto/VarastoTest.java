@@ -81,7 +81,7 @@ public class VarastoTest {
     public void lisaysLiikaaTäyttää () {
         double lisays = varasto.getTilavuus() + 3;
         varasto.lisaaVarastoon(lisays);
-        assertEquals(0.0, varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(varasto.getSaldo(), varasto.getTilavuus(), vertailuTarkkuus);
         
     }
     
